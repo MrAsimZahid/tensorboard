@@ -116,6 +116,17 @@ tf_ts_library(
 )
 
 tf_ts_library(
+    name = "testing",
+    testonly = True,
+    srcs = [
+        "testing.ts",
+    ],
+    deps = [
+        ":internal_types",
+    ],
+)
+
+tf_ts_library(
     name = "lib_tests",
     testonly = True,
     srcs = [
@@ -130,6 +141,7 @@ tf_ts_library(
         ":drawable",
         ":internal_types",
         ":scale",
+        ":testing",
         ":types",
         ":worker",
         "//tensorboard/webapp/widgets/line_chart_v2/lib/renderer",
